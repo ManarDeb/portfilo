@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://manardeb.github.io/portfolio",
+  "homepage": "https://manardeb.github.io/portfilo",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

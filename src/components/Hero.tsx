@@ -16,6 +16,19 @@ const SocialButton = styled(Button)(({ theme }) => ({
   borderRadius: theme.spacing(2),
 })) as typeof Button;
 
+const ProfileImage = styled('img')(({ theme }) => ({
+  width: '100%',
+  maxWidth: 400,
+  height: 'auto',
+  borderRadius: '50%',
+  boxShadow: theme.shadows[5],
+  border: `4px solid ${theme.palette.primary.main}`,
+  transition: 'transform 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.05)',
+  },
+}));
+
 const Hero = () => {
   return (
     <HeroSection id="hero">
@@ -50,18 +63,10 @@ const Hero = () => {
               </SocialButton>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Box
-              component="img"
-              src="/profile-placeholder.jpg"
+          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <ProfileImage
+              src="https://raw.githubusercontent.com/ManarDeb/portfilo/refs/heads/gh-pages/images/profile.png.jpeg"
               alt="Manar Debiche"
-              sx={{
-                width: '100%',
-                maxWidth: 400,
-                height: 'auto',
-                borderRadius: '50%',
-                boxShadow: 3,
-              }}
             />
           </Grid>
         </Grid>

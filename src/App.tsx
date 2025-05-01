@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero.tsx';
+import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -46,11 +46,22 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename="/portfilo">
         <Box className="App">
           <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
           <Routes>
             <Route path="/" element={
+              <>
+                <Hero />
+                <About />
+                <Skills />
+                <Experience />
+                <Projects />
+                <Education />
+                <Contact />
+              </>
+            } />
+            <Route path="*" element={
               <>
                 <Hero />
                 <About />
